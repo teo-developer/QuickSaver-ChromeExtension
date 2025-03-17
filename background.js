@@ -15,6 +15,26 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   }
 });
 
+// Update badge with bookmark count
+function updateBadge() {
+  chrome.storage.local.get(['bookmarks'], (result) => {
+    const bookmarks = result.bookmarks || [];
+    const count = bookmarks.length.toString();
+    chrome.action.setBadgeText({ text: count });
+    chrome.action.setBadgeBackgroundColor({ color: '#4a6cf7' });
+  });
+}
+
+// Initialize badge when extension starts
+updateBadge();
+
+// Listen for changes in storage to update badge
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === 'local' && changes.bookmarks) {
+    updateBadge();
+  }
+});
+
 // Record a site visit
 function recordVisit(url, title, favicon) {
   // Get current date and time
