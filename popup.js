@@ -39,10 +39,10 @@ function getCurrentTabInfo() {
       const activeTab = tabs[0];
       currentUrl = activeTab.url;
       currentTitle = activeTab.title || 'Unknown';
-      currentFavicon = activeTab.favIconUrl || 'images/default-favicon.png';
+      currentFavicon = activeTab.favIconUrl || 'images/sample.png';
       
-      // Display current URL
-      urlDisplay.textContent = formatUrl(currentUrl);
+      // Display current website title
+      urlDisplay.textContent = currentTitle;
       
       // Record this visit
       recordVisit(currentUrl, currentTitle, currentFavicon);
@@ -132,7 +132,7 @@ function saveCurrentSite() {
       id: Date.now(),
       url: currentUrl,
       title: currentTitle || 'Unknown',
-      favicon: currentFavicon || 'images/default-favicon.png',
+      favicon: currentFavicon || 'images/sample.png',
       dateAdded: new Date().toLocaleDateString()
     };
     
@@ -185,7 +185,7 @@ function renderBookmarks(filteredBookmarks = null) {
     const bookmarkEl = document.createElement('div');
     bookmarkEl.className = 'bookmark-item';
     bookmarkEl.innerHTML = `
-      <img class="bookmark-icon" src="${bookmark.favicon}" alt="Favicon" onerror="this.src='images/default-favicon.png'">
+      <img class="bookmark-icon" src="${bookmark.favicon}" alt="Favicon" onerror="this.src='images/sample.png'">
       <div class="bookmark-info">
         <div class="bookmark-title">${bookmark.title}</div>
         <div class="bookmark-url">${formatUrl(bookmark.url)}</div>
@@ -291,7 +291,7 @@ function updateTopSites(todayVisits) {
     const siteEl = document.createElement('li');
     siteEl.innerHTML = `
       <div class="site-rank">${index + 1}</div>
-      <img class="bookmark-icon" src="${site.favicon}" alt="Favicon" onerror="this.src='images/default-favicon.png'">
+      <img class="bookmark-icon" src="${site.favicon}" alt="Favicon" onerror="this.src='images/sample.png'">
       <div class="site-info">
         <div class="site-title">${site.domain}</div>
         <div class="site-visits">${site.visits} visit${site.visits > 1 ? 's' : ''}</div>
