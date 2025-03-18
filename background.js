@@ -42,7 +42,7 @@ function recordVisit(url, title, favicon) {
   const visit = {
     url,
     title: title || 'Unknown',
-    favicon: favicon || 'images/default-favicon.png',
+    favicon: favicon || 'images/sample.png',
     timestamp: now.getTime(),
     date: now.toLocaleDateString(),
     time: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
