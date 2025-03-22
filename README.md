@@ -10,6 +10,12 @@ QuickSaver is a Chrome extension that helps you track and save websites you visi
 - **Search Functionality**: Easily search through your saved bookmarks
 - **Clean UI**: Modern and intuitive user interface with animations
 
+## Screenshots
+
+<div style="display: flex">
+<img src="images/screenshot1.png" alt="screenshot">
+</div>
+
 ## Installation
 
 ### From Source Code
