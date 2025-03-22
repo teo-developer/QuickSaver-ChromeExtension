@@ -13,7 +13,7 @@ QuickSaver is a Chrome extension that helps you track and save websites you visi
 ## Screenshots
 
 <div style="display: flex">
-<img src="images/screenshot1.png" alt="screenshot">
+<img src="images/screenshot1.png" alt="screenshot " style="width:200px;">
 </div>
 
 ## Installation
